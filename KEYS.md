@@ -1,0 +1,80 @@
+\# CPA Platform — API Keys
+
+\# This file is gitignored. NEVER commit this file.
+
+\# Last updated: June 2026
+
+
+
+\## QuickBooks Online
+
+QBO\_SANDBOX\_CLIENT\_ID=ABVLloY1bMlWzjGca1EWP9AMAH3IHlf8a39kIxQVKketK074Py
+
+QBO\_SANDBOX\_CLIENT\_SECRET=aOViVk557zbzii7iVhkRIKpSWVg5aAfDVtf0v878
+
+QBO\_SANDBOX\_REALM\_ID=9341457214891462
+
+
+
+\## Supabase
+
+SUPABASE\_URL=https://edrltorcdwxdczgpgxko.supabase.co
+
+SUPABASE\_ANON\_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVkcmx0b3JjZHd4ZGN6Z3BneGtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA1MzMxMTEsImV4cCI6MjA5NjEwOTExMX0.G-9A3w2JaDmBbUDw7QHyJ2hOdcGRDNAGW1-ScVzsDLE
+
+SUPABASE\_SERVICE\_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVkcmx0b3JjZHd4ZGN6Z3BneGtvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4MDUzMzExMSwiZXhwIjoyMDk2MTA5MTExfQ.7JH2nBK55uYQh9MEJq\_Jm6uk7\_JBx165j0JtjXOEAxE
+
+SUPABASE\_DB\_PASSWORD=Tatavinchu@36
+
+
+
+\## Redis
+
+REDIS\_URL=redis-cli --tls -u rediss://default:gQAAAAAAAi6sAAIgcDE1MjEwYjU2ODM0YjY0YTNhODcyNzAwYmU1NjJkNjk0NA@fast-crab-143020.upstash.io:6379
+
+UPSTASH\_REDIS\_REST\_URL=https://fast-crab-143020.upstash.io
+
+UPSTASH\_REDIS\_REST\_TOKEN=gQAAAAAAAi6sAAIgcDE1MjEwYjU2ODM0YjY0YTNhODcyNzAwYmU1NjJkNjk0NA
+
+\## AI (add when card is available)
+
+OPENAI\_API\_KEY=
+
+ANTHROPIC\_API\_KEY=
+
+
+
+\## Email
+
+RESEND\_API\_KEY=re\_i4Wrf1nD\_Cs8ftHG8LpML5bdgH8dELocD
+
+
+
+\## Monitoring
+
+SENTRY\_DSN\_API=https://659ef8eb6c31285ac2cad64af0c92021@o4511505634689024.ingest.us.sentry.io/4511505638621184
+
+SENTRY\_DSN\_WEB=https://81fefa9205ca4fb07176abc1a43c9473@o4511505634689024.ingest.us.sentry.io/4511505646813184
+
+
+
+\## Deploy
+
+RAILWAY\_TOKEN=25014a6e-d7bd-4431-b2e6-297fcd5610f0
+
+RAILWAY\_API\_URL=
+
+VERCEL\_TOKEN=vcp\_1JFjklJjLPpkfoyyPKlcSWtodW9Fz6pGpJpSJiiWlxFKW7vJZJ2LTXxw
+
+VERCEL\_ORG\_ID=team\_RNfuDX8CnWviYmBeWl8tKQ3f
+
+VERCEL\_PROJECT\_ID=
+
+
+
+\## Security
+
+FERNET\_KEY=d4y77JLwYj\_0WAZ2EUDsiWfH0peqJITGfiBsuW0lorE=
+
+JWT\_SECRET=d89bc1d343306d8e26381df8ab0b30fe32a1459f866fba01f38475e70dfb5917
+
