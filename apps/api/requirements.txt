@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+supabase
+python-dotenv
+pydantic[email]
+celery[redis]
+httpx
+python-jose[cryptography]
+passlib[bcrypt]
+cryptography
+sentry-sdk[fastapi]
+openai
+anthropic
+python-quickbooks
+slowapi
