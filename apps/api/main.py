@@ -32,9 +32,8 @@ app.add_middleware(
 @app.get("/health")
 async def health():
     try:
-        # Just verify Supabase client initialized correctly
-        supabase.auth.get_session()
+        result = supabase.table("firms").select("id").limit(1).execute()
         return {"status": "ok", "db": "connected"}
-    except Exception:
-        return {"status": "ok", "db": "connected"}
+    except Exception as e:
+        return {"status": "ok", "db": "unreachable", "error": str(e)}
 

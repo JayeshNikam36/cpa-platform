@@ -1,0 +1,58 @@
+# CPA Platform — Cursor Rules
+# These rules apply to every file in this project
+
+## PYTHON RULES (apps/api)
+
+- Always use Pydantic v2 syntax: model_config = ConfigDict(...) 
+  Never use the old class Config syntax
+- Use Decimal from the decimal module for ALL monetary values
+  Never use float or double for any money calculation
+- All functions must have complete type hints on both parameters and return values
+- Use async/await throughout. No synchronous database calls in FastAPI routes
+- Import order: standard library first, then third party, then local modules
+- Never hardcode secrets. Always use os.environ.get("KEY_NAME")
+- Every Supabase query in routers must include firm_id for tenant isolation
+- Use python-dotenv load_dotenv() at the top of all entry point files
+- Always handle exceptions gracefully — never let unhandled errors reach the user
+- Use UUID for all primary keys, never integers
+
+## TYPESCRIPT RULES (apps/web)
+
+- Strict TypeScript always. Never use the "any" type under any circumstance
+- Use Next.js 14 app router patterns only. Never use pages directory patterns
+- Default to Server Components. Only add "use client" when the component
+  needs useState, useEffect, or other browser-only React hooks
+- Supabase queries in Server Components must use the server client (createServerClient)
+- Supabase queries in Client Components must use the browser client (createBrowserClient)
+- Never import or use the Supabase service role key in any frontend file ever
+- Always handle loading and error states in components
+- Use proper TypeScript interfaces for all data shapes
+
+## DATABASE RULES
+
+- Every Supabase table must have Row Level Security enabled immediately after creation
+- Every table that stores firm data must have a firm_id UUID column that is NOT NULL
+- Use gen_random_uuid() for all UUID primary key defaults
+- Use NUMERIC(15,2) for all money/amount columns — never FLOAT, REAL, or DOUBLE
+- Every table gets created_at TIMESTAMPTZ DEFAULT now() 
+  and updated_at TIMESTAMPTZ DEFAULT now()
+- Always add an index on firm_id for every table that has one
+- Always add an index on client_id for every table that has one
+- Foreign keys must have ON DELETE CASCADE or ON DELETE SET NULL explicitly set
+
+## SECURITY RULES
+
+- Never log API keys, tokens, passwords, or any secret values anywhere
+- OAuth tokens must be encrypted with Fernet before storing in the database
+- All user-facing API endpoints must verify the JWT token before processing
+- Use hmac.compare_digest for any token comparison to prevent timing attacks
+- The Supabase service role key is only used in FastAPI backend — never frontend
+- All file uploads must be validated for type and size before storing
+
+## GENERAL RULES
+
+- Commit to git after every working feature before starting the next one
+- Write the simplest code that works — no premature optimization
+- If a file grows beyond 300 lines, suggest splitting it into smaller modules
+- Always add error handling around external API calls (QBO, OpenAI, Supabase)
+- Never expose internal error details to the frontend — log them, return generic message
