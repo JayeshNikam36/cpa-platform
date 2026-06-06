@@ -12,6 +12,8 @@ from fastapi.responses import RedirectResponse
 from cryptography.fernet import Fernet
 from dotenv import load_dotenv
 
+from database import supabase
+
 load_dotenv()
 
 router = APIRouter(prefix="/auth", tags=["auth"])
@@ -89,8 +91,6 @@ async def qbo_callback(code: str, state: str, realmId: str) -> RedirectResponse:
         encrypted_refresh = fernet.encrypt(refresh_token.encode()).decode()
         expires_at = datetime.utcnow() + timedelta(seconds=expires_in)
 
-        from main import supabase
-
         supabase.table("firms").update(
             {
                 "qbo_realm_id": realmId,
@@ -115,8 +115,6 @@ async def qbo_refresh(firm_id: str) -> dict[str, str]:
         raise HTTPException(status_code=500, detail="Encryption is not configured")
 
     try:
-        from main import supabase
-
         result = (
             supabase.table("firms")
             .select("qbo_refresh_token")
